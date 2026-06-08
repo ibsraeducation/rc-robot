@@ -1,0 +1,6 @@
+{
+  "name": "RC Car Controller",
+  "description": "Tactile remote control panel for Esp32/ESP8266 RC cars, integrated with Firebase Realtime Database.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
