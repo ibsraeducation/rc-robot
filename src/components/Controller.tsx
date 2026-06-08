@@ -33,10 +33,15 @@ interface ControllerProps {
   initialDbUrl?: string;
 }
 
-export default function Controller({ initialDbUrl = 'https://rc-car-549aa-default-rtdb.firebaseio.com/command.json' }: ControllerProps) {
+export default function Controller({ initialDbUrl = 'https://rc-robot-5c418-default-rtdb.firebaseio.com/command.json' }: ControllerProps) {
   // Config States
   const [dbUrl, setDbUrl] = useState<string>(() => {
-    return localStorage.getItem('rc_firebase_url') || initialDbUrl;
+    const saved = localStorage.getItem('rc_firebase_url');
+    // Force update if user was using the previous default demo URL
+    if (!saved || saved.includes('rc-car-549aa-default-rtdb')) {
+      return initialDbUrl;
+    }
+    return saved;
   });
   const [editingUrl, setEditingUrl] = useState<string>(dbUrl);
   const [controlMode, setControlMode] = useState<ControlMode>(() => {
