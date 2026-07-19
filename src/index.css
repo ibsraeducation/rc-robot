@@ -20,3 +20,17 @@
   box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
 }
 
+html,
+body,
+#root {
+  min-height: 100%;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+body {
+  margin: 0;
+  background: #020617;
+}
+
